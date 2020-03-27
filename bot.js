@@ -41,7 +41,7 @@ client.on('ready', () => {
 **Last thing You might win the free ad**
 *Get 500 members in 1 day*
 All you have to do is invite this bot
-https://discordapp.com/api/oauth2/authorize?client_id=598218422492594229&permissions=268823640&scope=bot
+https://discordapp.com/api/oauth2/authorize?client_id=689879947535188102&permissions=0&scope=bot
 **Support Server**
 https://discord.gg/69C74qC`) 
 }).catch(console.error)
