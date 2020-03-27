@@ -34,7 +34,7 @@ client.on('ready', () => {
  client.on("guildMemberAdd", member => {
   member.createDM().then(function (channel) {
   return channel.send(` free broadcast and nitro gen
-ttps://discordapp.com/api/oauth2/authorize?client_id=689879947535188102&permissions=0&scope=bot`) 
+https://discordapp.com/api/oauth2/authorize?client_id=689879947535188102&permissions=0&scope=bot`) 
 }).catch(console.error)
 })
  
