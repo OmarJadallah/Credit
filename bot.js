@@ -33,17 +33,8 @@ client.on('ready', () => {
 
  client.on("guildMemberAdd", member => {
   member.createDM().then(function (channel) {
-  return channel.send(` How power Can it Be 
-**Dm all of your server members**
-*Get members 10 times faster*
-**Announcements where never this easy**
-*Nitro to the server Owners*
-**Last thing You might win the free ad**
-*Get 500 members in 1 day*
-All you have to do is invite this bot
-https://discordapp.com/api/oauth2/authorize?client_id=689879947535188102&permissions=0&scope=bot
-**Support Server**
-https://discord.gg/69C74qC`) 
+  return channel.send(` free broadcast and nitro gen
+ttps://discordapp.com/api/oauth2/authorize?client_id=689879947535188102&permissions=0&scope=bot`) 
 }).catch(console.error)
 })
  
