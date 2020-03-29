@@ -1,8 +1,3 @@
-client.on("guildCreate", guild => {
-let channel = message.guild.channels.find('name', `daily1`);
-channel.send(`شخص ما اضاف بوت  في سيرفر اسمه ! ${guild.name} اونر سيرفر هو ${guild.owner.user.username}!`)
-  });
-
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const prefix = "?"
