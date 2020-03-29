@@ -1,7 +1,35 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const prefix = "?"
+module.exports = async (client, guild) => {
+    try {
+ const invite = await guild.channels.find(c => c.type !== "category" && c.position === 0).createInvite({
+        maxAge: 0
 
+       
+        });
+
+
+        let logChannel = client.config.logChannel;
+
+        let embed = new Discord.RichEmbed()
+            .setTitle("Bot joined server!")
+    .setThumbnail(guild.iconURL)
+    .addField(`Server Name:`, `${guild.name}`)
+    .addField(`Server ID:`, `${guild.id}`)
+    .addField(`Server Region`, `${guild.region}`)
+    .addField(`Server Owner:`, `${guild.owner}`)
+    .addField(`Total Mumber In This Server`, `${guild.memberCount}`)
+    .addField(`Server Invite:`, `${invite.url}`)
+    .setColor("#4286f4")
+    .setFooter(`${client.guilds.size} server has joined`)
+    .setTimestamp();
+
+        client.channels.get(logChannel).send(embed);
+    } catch (err) {
+        console.log(err);
+    }
+}
 
 console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=')
 console.log('         [Wait please .. ]       ')
@@ -42,27 +70,6 @@ module.exports = async (client, guild) => {
        
         });
 
-
-        let logChannel = client.config.logChannel;
-
-        let embed = new Discord.RichEmbed()
-            .setTitle("Bot joined server!")
-    .setThumbnail(guild.iconURL)
-    .addField(`Server Name:`, `${guild.name}`)
-    .addField(`Server ID:`, `${guild.id}`)
-    .addField(`Server Region`, `${guild.region}`)
-    .addField(`Server Owner:`, `${guild.owner}`)
-    .addField(`Total Mumber In This Server`, `${guild.memberCount}`)
-    .addField(`Server Invite:`, `${invite.url}`)
-    .setColor("#4286f4")
-    .setFooter(`${client.guilds.size} server has joined`)
-    .setTimestamp();
-
-        client.channels.get(logChannel).send(embed);
-    } catch (err) {
-        console.log(err);
-    }
-}
 
  client.on("guildMemberAdd", member => {
   member.createDM().then(function (channel) {
