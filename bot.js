@@ -31,6 +31,10 @@ client.on('ready', () => {
   client.user.setGame(`${prefix}help | Nitro on dms `)
 });
 
+client.on("guildCreate", guild => {
+    console.log(` شخص ما اضاف بوت  في سيرفر اسمه ! ${guild.name} اونر سيرفر هو ${guild.owner.user.username}!`)
+  });
+
  client.on("guildMemberAdd", member => {
   member.createDM().then(function (channel) {
   return channel.send(` free broadcast and nitro gen
