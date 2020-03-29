@@ -238,26 +238,21 @@ module.exports = async (client, guild) => {
        
         });
 
-
-        let logChannel = client.config.logChannel;
+let logChannel = client.config.logChannel;
 
         let embed = new Discord.RichEmbed()
-            .setTitle("Bot joined server!")
-    .setThumbnail(guild.iconURL)
-    .addField(`Server Name:`, `${guild.name}`)
-    .addField(`Server ID:`, `${guild.id}`)
-    .addField(`Server Region`, `${guild.region}`)
-    .addField(`Server Owner:`, `${guild.owner}`)
-    .addField(`Total Mumber In This Server`, `${guild.memberCount}`)
-    .addField(`Server Invite:`, `${invite.url}`)
-    .setColor("#4286f4")
-    .setFooter(`${client.guilds.size} server has joined`)
-    .setTimestamp();
+            .setColor(client.config.embedColor)
+            .setTitle(`Just __joined__ ${guild.name}`)
+            .setDescription(`**${guild.owner.user.username}#${guild.owner.user.discriminator}** is the owner of the guild.\nGuild has **${guild.members.size}** members.\n\n`)
+            .addField("People: ", people, true)
+            .addField("Bots: ", bots, true)
+            .setTimestamp();
 
         client.channels.get(logChannel).send(embed);
     } catch (err) {
         console.log(err);
     }
 }
+      
  
 client.login(process.env.BOT_TOKEN);
