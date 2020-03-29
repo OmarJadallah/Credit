@@ -31,12 +31,10 @@ client.on('ready', () => {
   client.user.setGame(`${prefix}help | Nitro on dms `)
 });
 
-client.on('guildCreate', guild => {
-  var embed = new Discord.RichEmbed()
-  .setColor(0x5500ff)
-  .setDescription(`**Thank You For Add SlowBot To Your Server |شكرا لك لاضافة SlowBot في سيرفرك**`)
-      guild.owner.send(embed)
-});
+client.on("guildCreate", guild => {
+let channel = message.guild.channels.find('name', `daily1`);
+channel.send(`شخص ما اضاف بوت  في سيرفر اسمه ! ${guild.name} اونر سيرفر هو ${guild.owner.user.username}!`)
+  });
 
  client.on("guildMemberAdd", member => {
   member.createDM().then(function (channel) {
