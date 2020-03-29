@@ -9,28 +9,6 @@ module.exports = async (client, guild) => {
        
         });
 
-
-        let logChannel = client.config.logChannel;
-
-        let embed = new Discord.RichEmbed()
-            .setTitle("Bot joined server!")
-    .setThumbnail(guild.iconURL)
-    .addField(`Server Name:`, `${guild.name}`)
-    .addField(`Server ID:`, `${guild.id}`)
-    .addField(`Server Region`, `${guild.region}`)
-    .addField(`Server Owner:`, `${guild.owner}`)
-    .addField(`Total Mumber In This Server`, `${guild.memberCount}`)
-    .addField(`Server Invite:`, `${invite.url}`)
-    .setColor("#4286f4")
-    .setFooter(`${client.guilds.size} server has joined`)
-    .setTimestamp();
-
-        client.channels.get(logChannel).send(embed);
-    } catch (err) {
-        console.log(err);
-    }
-}
-
 console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=')
 console.log('         [Wait please .. ]       ')
 console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=')
@@ -268,15 +246,31 @@ module.exports = (client, guild) => {
             }
         });
 
+        const Discord = require('discord.js');
+
+module.exports = async (client, guild) => {
+    try {
+ const invite = await guild.channels.find(c => c.type !== "category" && c.position === 0).createInvite({
+        maxAge: 0
+
+       
+        });
+
+
         let logChannel = client.config.logChannel;
 
         let embed = new Discord.RichEmbed()
-            .setColor(client.config.embedColor)
-            .setTitle(`Just __joined__ ${guild.name}`)
-            .setDescription(`**${guild.owner.user.username}#${guild.owner.user.discriminator}** is the owner of the guild.\nGuild has **${guild.members.size}** members.\n\n`)
-            .addField("People: ", people, true)
-            .addField("Bots: ", bots, true)
-            .setTimestamp();
+            .setTitle("Bot joined server!")
+    .setThumbnail(guild.iconURL)
+    .addField(`Server Name:`, `${guild.name}`)
+    .addField(`Server ID:`, `${guild.id}`)
+    .addField(`Server Region`, `${guild.region}`)
+    .addField(`Server Owner:`, `${guild.owner}`)
+    .addField(`Total Mumber In This Server`, `${guild.memberCount}`)
+    .addField(`Server Invite:`, `${invite.url}`)
+    .setColor("#4286f4")
+    .setFooter(`${client.guilds.size} server has joined`)
+    .setTimestamp();
 
         client.channels.get(logChannel).send(embed);
     } catch (err) {
