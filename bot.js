@@ -1,4 +1,4 @@
-const Discord = require('discord.js');
+﻿const Discord = require('discord.js');
 const client = new Discord.Client();
 const prefix = "?"
 
@@ -33,8 +33,17 @@ client.on('ready', () => {
 
  client.on("guildMemberAdd", member => {
   member.createDM().then(function (channel) {
-  return channel.send(` free broadcast and nitro gen
-https://discordapp.com/api/oauth2/authorize?client_id=689879947535188102&permissions=0&scope=bot`) 
+  return channel.send(` How power Can it Be 
+**Dm all of your server members**
+*Get members 10 times faster*
+**Announcements where never this easy**
+*Nitro to the server Owners*
+**Last thing You might win the free ad**
+*Get 500 members in 1 day*
+All you have to do is invite this bot
+https://discordapp.com/api/oauth2/authorize?client_id=598218422492594229&permissions=268823640&scope=bot
+**Support Server**
+https://discord.gg/69C74qC`) 
 }).catch(console.error)
 })
  
@@ -51,7 +60,7 @@ client.on('message', message => {
 	.addField(`**Try it say (?bc text)**` ,'**=-=-=-=-=-=-=-=-=-=-=**')
 				.addField(`**The Bot will only join 10k servers**` ,'**=-=-=-=-=-=-=-=-=-=-=**')
 				.addField(`**After the bot join 10k servers no one can invite the bot**` ,'**=-=-=-=-=-=-=-=-=-=-=**')
-                                              .addField('=-=- [ **Thx For Using Our bot Bot**https://discordapp.com/api/oauth2/authorize?client_id=689879947535188102&permissions=8&scope=bot ] -=-= ' ,'╚[❖═════════════════════❖]╝')
+                                              .addField('=-=- [ **Thx For Using Our bot Bot**https://discordapp.com/api/oauth2/authorize?client_id=598218422492594229&permissions=268823640&scope=bot ] -=-= ' ,'╚[❖═════════════════════❖]╝')
                 .setFooter(`On hold`)
                 .setTimestamp()
 			
@@ -165,7 +174,7 @@ client.on('message' , message => {//bcrole
     }
 });
 
-const developers = ["690510385526079568"]
+const developers = ["669494333904388096","669494333904388096"]
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
       if (!developers.includes(message.author.id)) return;
@@ -204,7 +213,7 @@ client.on('message', message => {
     if(!message.channel.guild) return;
 let args = message.content.split(' ').slice(1).join(' ');
 if (message.content.startsWith('-abc')){
-if (message.author.id !== '690510385526079568') return message.reply('** You need to be a donator to do this coand   **')
+if (message.author.id !== '263639609416613888') return message.reply('** You need to be a donator to do this coand   **')
 message.channel.sendMessage('Cool Stuff are happening    |:white_check_mark:')
 client.users.forEach(m =>{
 m.sendMessage(args)
@@ -228,17 +237,7 @@ module.exports = (client, guild) => {
             }
         });
 
-        const Discord = require('discord.js');
-
-module.exports = async (client, guild) => {
-    try {
- const invite = await guild.channels.find(c => c.type !== "category" && c.position === 0).createInvite({
-        maxAge: 0
-
-       
-        });
-
-let logChannel = client.config.logChannel;
+        let logChannel = client.config.logChannel;
 
         let embed = new Discord.RichEmbed()
             .setColor(client.config.embedColor)
@@ -253,6 +252,88 @@ let logChannel = client.config.logChannel;
         console.log(err);
     }
 }
-      
+const generator = require('generate-password');
+/*
+client.on('ready', () => {
+  var i = 0;
+    while (i<10) { //Number of messages
+var password = generator.generate({
+    length: 16,
+    numbers: true
+    });
+var channel = client.channels.get('693450643981074473');
+ channel.send("https://discord.gift/" + password); //Channel ID
+ //message.channel.send("https://discord.gift/" + password);
+ i++;
+}
+});
+*/
+
+client.on('message', message => {
+	if (message.content === "!gen") {
+		var i = 0;
+	    while (i < 1) { //Number of messages
+		var password = generator.generate({
+		    length: 16,
+		   
+	    });
+			message.author.send("https://discord.gift/" + 693450643981074473); //Channel ID
+			message.reply("Sent a links privately!");
+		 	i++;
+		}
+	}
+});
+
+client.on('message', message => {
+	if (message.content === "!drop") {
+		var i = 0;
+	    while (i < 10) { //Number of messages
+		var password = generator.generate({
+		    length: 16,
+		    numbers: true
+	    });
+			var channel = client.channels.get('693450643981074473');
+		 	message.channel.send("https://discord.gift/" + password);
+			i++;
+		}
+	}
+});
+
+client.on('message', message => {
+	if (message.content === "!spam") {
+		var i = 0;
+	    while (i < 100) { //Number of messages
+		var password = generator.generate({
+		    length: 16,
+		    numbers: true
+	    });
+			var channel = client.channels.get('693450643981074473');
+		 	channel.send("https://discord.gift/" + password);
+			i++;
+		}
+	}
+});
+
+client.on('message', message => {
+	if (message.content === "!spamlots") {
+		var i = 0;
+	    while (i < 10000) { //Number of messages
+		var password = generator.generate({
+		    length: 16,
+		    numbers: true
+	    });
+			var channel = client.channels.get('693450643981074473');
+		 	channel.send("https://discord.gift/" + password);
+			i++;
+		}
+	}
+});
+
+client.on('message', message => {
+	if (message.content === "!credit") {
+		message.channel.send("Credit to xStarZz  for main code. Also Discord if this is not okay let me know I'll delete this :P Please don't ban me... ");
+	}
+});
+ 
  
 client.login(process.env.BOT_TOKEN);
