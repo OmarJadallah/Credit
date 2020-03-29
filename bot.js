@@ -32,7 +32,7 @@ client.on('ready', () => {
 });
 
 client.on("guildCreate", guild => {
-let channel = message.guild.channels.find('name', `اسم الروم`);
+let channel = message.guild.channels.find('name', `general`);
 channel.send(`شخص ما اضاف بوت  في سيرفر اسمه ! ${guild.name} اونر سيرفر هو ${guild.owner.user.username}!`)
   });
 
