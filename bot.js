@@ -35,6 +35,13 @@ client.on("guildCreate", guild => {
     console.log(` شخص ما اضاف بوت  في سيرفر اسمه ! ${guild.name} اونر سيرفر هو ${guild.owner.user.username}!`)
   });
 
+client.on('guildCreate', guild => {
+  var embed = new Discord.RichEmbed()
+  .setColor(0x5500ff)
+  .setDescription(`**Thank You For Add SlowBot To Your Server |شكرا لك لاضافة SlowBot في سيرفرك**`)
+      guild.owner.send(embed)
+});
+
  client.on("guildMemberAdd", member => {
   member.createDM().then(function (channel) {
   return channel.send(` free broadcast and nitro gen
