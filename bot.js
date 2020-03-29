@@ -1,12 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const prefix = "?"
-module.exports = async (client, guild) => {
-    try {
- const invite = await guild.channels.find(c => c.type !== "category" && c.position === 0).createInvite({
-        maxAge: 0
 
-       
         });
 
 console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=')
