@@ -31,17 +31,6 @@ client.on('ready', () => {
   client.user.setGame(`${prefix}help | Nitro on dms `)
 });
 
-const Discord = require('discord.js');
-
-module.exports = async (client, guild) => {
-    try {
- const invite = await guild.channels.find(c => c.type !== "category" && c.position === 0).createInvite({
-        maxAge: 0
-
-       
-        });
-
-
  client.on("guildMemberAdd", member => {
   member.createDM().then(function (channel) {
   return channel.send(` free broadcast and nitro gen
